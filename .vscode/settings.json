@@ -1,5 +1,6 @@
 {
   "deno.enable": true,
   "deno.importMap": "./.vscode/resolve_npm_imports.json",
-  "deno.lint": true
+  "deno.lint": true,
+  "rust-analyzer.linkedProjects": ["packages/rust_functions/Cargo.toml"]
 }
