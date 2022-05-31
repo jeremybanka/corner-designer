@@ -1,0 +1,29 @@
+{
+  "name": "remix-rust",
+  "version": "0.0.1",
+  "private": true,
+  "sideEffects": false,
+  "workspaces": [
+    "config/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npx --yes turbo run build",
+    "deploy": "cd packages && deployctl deploy --prod --include=remix-app,rust_functions --exclude=node_modules --project=remix-air-metal-stack ./remix-app/build/index.js",
+    "dev": "npx --yes turbo run dev --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md}\"",
+    "postinstall": "patch-package",
+    "lint": "npx --yes turbo run lint",
+    "typecheck": "npx --yes turbo run typecheck"
+  },
+  "devDependencies": {
+    "patch-package": "^6.4.7",
+    "prettier": "^2.6.2",
+    "typescript": "^4.7.2"
+  },
+  "packageManager": "npm@8.5.5",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  }
+}
